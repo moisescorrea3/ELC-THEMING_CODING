@@ -1,0 +1,200 @@
+@import 'variables.scss';
+
+/** Add styles here **/
+
+// Common styles
+.button {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 25px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  &--primary {
+    background: $color-black;
+    color: $color-white;
+  }
+  &--secondary {
+    border: 2px solid $color-gray;
+    color: $color-black;
+    background: $color-white;
+  }
+}
+
+.typography {
+  font-family: $elc-font;
+  color: $color-black;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0;
+  &--title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+  }
+  &--subtitle {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  &--secondary {
+    color: $color-dark-gray;
+  }
+}
+
+.icon {
+  &--xs {
+    height: 12px;
+    width: 8px;
+  }
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  width: auto;
+  padding: 3rem 0;
+  &--lg {
+    height: 464.31px;
+  }
+  &--md {
+    height: 164px;
+  }
+  &--sm {
+    height: 100px;
+  }
+  &--xs {
+    height: 26px;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+}
+
+// Product component styles
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin: $spacing-xl;
+  &__details-container {
+    display: grid;
+    padding: $spacing-xl;
+    gap: $spacing-xl;
+    row-gap: 0;
+    grid-template-columns: 45% 55%;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  &__category {
+    grid-column: 2/3;
+  }
+  @media screen and (max-width: $landscape-up) {
+    margin: $spacing-lg;
+    &__details-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+}
+
+// ProductDesc component styles
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: $spacing-md;
+  margin-bottom: $spacing-md;
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+  &__rating {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+  &__shade {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 2px solid #e6e6e6;
+    > div {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  @media screen and (max-width: $landscape-up) {
+    &__features {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// ProductPurchase component styles
+.product-purchase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+  align-items: center;
+  &__control {
+    display: flex;
+    gap: $spacing-md;
+    align-items: center;
+    margin: 0;
+  }
+  @media screen and (max-width: $landscape-up) {
+    & p,
+    button {
+      grid-column: 1/3;
+    }
+  }
+}
+
+// ProductGrid component styles
+.product-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &__items {
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: repeat(4, 1fr);
+    > div {
+      width: 100%;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    min-height: 130px;
+  }
+  &__image {
+    background-color: $color-light-gray;
+  }
+  @media screen and (max-width: $landscape-up) {
+    flex-direction: column;
+    justify-content: center;
+    &__items {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
